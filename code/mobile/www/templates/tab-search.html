@@ -1,0 +1,35 @@
+<ion-view class="page-search" title="{{$root.appLanguage.SEARCH_TEXT}}">
+	<ion-content class="has-footer" scroll="false">
+		<div class="header-form-search">
+			<form name="searchForm" ng-submit="doSearch(searchForm)" novalidate="">
+				<div class="item-input-inset">
+					<label class="item-input-wrapper">
+						<i class="icon ion-ios-search placeholder-icon"></i>
+						<input type="search" ng-model="searchFormData.keyword" name="keyword" placeholder="{{$root.appLanguage.SEARCH_TEXT}}">
+					</label>
+					<button type="submit" class="button button-small button-positive">
+						{{$root.appLanguage.SEARCH_TEXT}}
+					</button>
+				</div>
+			</form>
+		</div>
+		<ion-content>
+			<div class="product-list">
+				<div class="product-item" ng-repeat="product in searchData" ng-click="openProduct({{product.id}})">
+					<img actual-src="{{product.images[0].src}}" ng-src="img/placeholder.png">
+					<div class="meta text-center">
+						<h2 class="name">{{product.name}}</h2>
+						<div class="on-sale" ng-if="product.on_sale">{{$root.appLanguage.PRODUCT_SALE_TEXT}}</div>
+						<div class="price" ng-if="product.price_html" ng-bind-html="product.price_html"></div>
+						<div class="price" ng-if="!product.price_html" price="{{product.price}}"></div>
+					</div>
+				</div>
+			</div>
+			<ion-infinite-scroll
+				ng-if="canLoadMoreSearchData"
+				on-infinite="loadMoreSearchData()"
+				distance="5%">
+			</ion-infinite-scroll>
+		</ion-content>
+	</ion-content>
+</ion-view>

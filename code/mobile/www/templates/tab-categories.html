@@ -1,0 +1,12 @@
+<ion-view title="{{$root.appLanguage.CATEGORIES_TEXT}}">
+	<ion-content class="has-footer">
+		<div class="category-list">
+			<div class="category-item" ng-repeat="category in categoryData" ng-click="openCategory({{category.id}})">
+				<div class="image">
+					<img actual-src="{{category.image.src}}" ng-src="img/placeholder.png">	
+				</div>
+				<div class="title">{{category.name}}</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

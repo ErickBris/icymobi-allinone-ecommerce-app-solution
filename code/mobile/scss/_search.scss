@@ -1,0 +1,26 @@
+.item-input-wrapper{
+	@include border-radius(0);
+}
+
+.page-search{
+	.header-form-search{
+		height: 44px;
+		background: rgba(#fff, 0.8);
+		form{
+			padding: 6px 10px;
+			width: 100%;
+			.item-input-inset{
+				padding: 0;
+			}
+
+			.button{
+				border-color: $main-color;
+				height: 32px;
+			}
+		}
+
+		+ ion-content{
+			top: 44px;
+		}
+	}
+}

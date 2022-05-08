@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Inspius. All rights reserved.
+ * Author: Stephen Pham, Phong Nguyen
+ * Author URI: http://inspius.com
+ */
+-->
+<integrations>
+    <integration name="iscommerceIntegration">
+        <email></email>
+        <endpoint_url></endpoint_url>
+        <identity_link_url></identity_link_url>
+    </integration>
+</integrations>
